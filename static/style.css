@@ -154,10 +154,20 @@ p {
 	line-height: 1.5;
 	color: #999;
 }
+.story-authors, .story-venue {
+	font-size: .9em;
+	color: #333;
+}
+.story-venue {
+	font-style: italic;
+}
 .story-blurb {
 	margin-top: 5px;
 	font-size: .9em;
 	line-height: 1.5;
+}
+.story-publication .story-blurb {
+	margin-top: 8px;
 }
 
 .float {
