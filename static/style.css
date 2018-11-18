@@ -8,7 +8,7 @@
 
 html {
 	font-family: 'segoe ui', sans-serif;
-	font-size: 14pt;
+	font-size: 19px;
 	background-color: #f9f9ff;
 	padding: 2em 1em 5em;
 }
@@ -48,6 +48,7 @@ p {
 	margin-left: 2px;
 }
 
+/* The header on the home page */
 .index-header {
 	margin: 8em 0;
 }
@@ -68,6 +69,7 @@ p {
 	line-height: 1.9;
 }
 
+/* Header on side of articles */
 .header {
 	font-size: 13pt;
 }
@@ -93,6 +95,28 @@ p {
 	line-height: 1.7;
 }
 
+/* The header that appears when the screen is not wide enough */
+.header-out {
+	display: none;
+	text-align: center;
+	margin: 0 auto 2em;
+}
+.header-out .header-info {
+	display: inline-block;
+	margin: 0 0 0 1em;
+	vertical-align: middle;
+	text-align: left;
+}
+.header-out .avatar {
+	width: 75px;
+	height: 75px;
+	vertical-align: middle;
+}
+
+.index {
+	padding: 1em;
+}
+
 .section {
 	margin: 5em 0 0;
 }
@@ -113,22 +137,18 @@ p {
 }
 
 .story {
-	display: block;
-	overflow: hidden;/*
+	display: flex;/*
 	box-shadow: 0px 0px 20px rgba(30, 30, 30, .05);
 	box-shadow: 0px 0px 20px rgba(74, 128, 199, .05);*/
 	/*border: 1px solid #ccc; */
 	margin: .9em 0;
 	/*background-color: white;*/
+
 }
 .story-img {
-	vertical-align: top;
-	display: inline-block;
-	border-left: 1px solid #eee;
 	/*box-shadow: inset 0 10px 200px rgba(130, 130, 130, .1);*/
 	/*box-shadow: inset 0 10px 200px rgba(80, 139, 255, .13);*/
-	/*height: 100%;
-	width: 300px;*/
+	flex-shrink: 0;
 	width: 72px;
 	height: 72px;
 	background-size: cover;
@@ -142,10 +162,8 @@ p {
 }
 .story-info {
 	vertical-align: top;
-	display: inline-block;
 	margin-left: 1em;
-	width: 650px;
-	/*padding: .9em 1.5em .9em 1.25em;*/
+	max-width: 650px;
 }
 .story-no-blurb .story-img {
 	width: 36px;
@@ -187,20 +205,18 @@ p {
 	margin-right: -325px;
 	margin-bottom: 1.25em;
 }
-
 .article {
-	width: 900px;
-	line-height: 1.6;
-	
-	/*border: 1px solid #ccc;*/
-	background-color: white;
+	max-width: 900px;
+	width: 80%;
 	padding: 2.25em 2.25em 2em;
 	margin-top: 2em;
-	font-size: 19px;
+	
+	line-height: 1.6;
+	background-color: white;
 	font-family: 'pt serif', serif;
 }
-.article i, .article em {
-}
+
+.article i, .article em {}
 .article .float {
 	font-size: .92em;
 	font-family: 'segoe ui', sans-serif;
@@ -208,6 +224,8 @@ p {
 .article .float > ul {
 	padding: 0;
 }
+
+/* Article styles */
 .article ul {
 	padding-left: 3em;
 }
@@ -251,6 +269,7 @@ p {
 .article .h2 > .inline {
 	font-weight: 600;
 	font-size: 1.4em;
+	line-height: 1.2em;
 	margin: 0.75em 0 0.25em;
 	color: #111;
 }
@@ -269,24 +288,6 @@ p {
 .article b {
 	color: #222;
 }
-/*
-.article {
-	counter-reset: h2 h3 h4;
-}
-.article .h2 { counter-reset: h3 h4; }
-.article .h3 { counter-reset: h4; }
-.article .h2 > .inline::before {
-	counter-increment: h2;
-	content: counter(h2) "\0000a0\0000a0";
-}
-.article .h3 > .inline::before {
-	counter-increment: h3;
-	content: counter(h2) "." counter(h3) "\0000a0\0000a0";
-}
-.article .h4 > .inline::before {
-	counter-increment: h4;
-	content: counter(h2) "." counter(h3) "." counter(h4) "\0000a0\0000a0";
-}*/
 .article .tag {
 	color: #C80000;
 	font-family: consolas, monospace;
@@ -294,13 +295,14 @@ p {
 	padding-right: 3px;
 }
 
+/* Math styles */
 .article {
 	counter-reset: eq;
 }
 .article .math-block {
 	display: block;
 	margin: -12px 1px;
-	font-size: 18px !important;
+	font-size: 0.947em !important;
 	border-left: 1px dashed #aaa;
 }
 .article .math-block::before {
@@ -314,17 +316,15 @@ p {
 .article .math-inline {
 	display: inline;
 	margin: 0 1px;
-	font-size: 18px !important;
+	font-size: 0.947em !important;
 }
-.article .katex {
-	
-}
+.article .katex {}
 .mathbb {
 	-webkit-text-stroke-width: 0.35px;
 }
 
-.toc {
-}
+/* Table of contents */
+.toc {}
 .toc-header {
 	margin: 0 0 0.25em;
 	font-weight: bold;
@@ -354,4 +354,74 @@ p {
 	margin-left: 2em;
 	font-size: 0.9em;
 	line-height: 1.5em;
+}
+
+@media screen and (max-width: 900px) {
+	html {
+		padding: 2em 1em 1em;
+	}
+	.article {
+		margin: 0;
+		width: auto;
+	}
+	.article .h1 > .inline { 
+		font-size: 1.8em;
+		margin-bottom: 0.35em;
+	}
+	.header-out {
+		display: block;
+	}
+	.header {
+		display: none;
+	}
+	
+	.index-header .avatar, .index-header-info {
+		display: none;
+	}
+	.index-header {
+		margin: 2em 0;
+	}
+	.index .header-out {
+		font-size: 1.25em;
+	}
+	.index .avatar {
+		width: 100px;
+		height: 100px;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	html {
+		font-size: 16px;
+		padding: 1.5em 0 0;
+	}
+	.article {
+		padding: 1.5em 1em 1em;
+	}
+	.article .math-block {
+		margin-top: 0;
+		margin-bottom: 0;
+		overflow-x: auto;
+	}
+	.article .math-block .katex-display {
+		padding: 0 2em;
+	}
+}
+
+@media print {
+	html {
+		padding: 0 2em;
+		background-color: #fff;
+		width: 1000px;
+	}
+	.article {
+		padding: 0;
+		width: 700px;
+	}
+	.header {
+		display: none;
+	}
+	.mathbb {
+		-webkit-text-stroke-width: 0;
+	}
 }
