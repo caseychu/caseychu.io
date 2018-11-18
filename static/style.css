@@ -101,6 +101,7 @@ p {
 	display: none;
 	text-align: center;
 	margin: 0 auto 2em;
+	font-size: 1.25em;
 }
 .header-out .header-info {
 	display: inline-block;
@@ -109,13 +110,13 @@ p {
 	text-align: left;
 }
 .header-out .avatar {
-	width: 75px;
-	height: 75px;
+	width: 100px;
+	height: 100px;
 	vertical-align: middle;
 }
 
 .index {
-	padding: 1em;
+	padding: 0 1em;
 }
 
 .section {
@@ -243,11 +244,7 @@ p {
 	list-style-type: circle;
 }
 .article .numerical {
-	position: relative;
-}
-.article .numerical .index {
-	position: absolute;
-	left: -1.2em;  /* hacky but gets the job done */
+	list-style-type: decimal;
 }
 .article .meta {
 	font-size: 0.8em;
@@ -382,19 +379,12 @@ p {
 	.index-header {
 		margin: 2em 0;
 	}
-	.index .header-out {
-		font-size: 1.25em;
-	}
-	.index .avatar {
-		width: 100px;
-		height: 100px;
-	}
 }
 
 @media screen and (max-width: 700px) {
 	html {
 		font-size: 16px;
-		padding: 1.5em 0 0;
+		padding: 2.5em 0 0;
 	}
 	.article {
 		padding: 1.5em 1em 1em;
