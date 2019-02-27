@@ -125,7 +125,7 @@ p {
 .section-title {
 	margin-bottom: .8em;
 	font-variant: small-caps;
-	font-weight: bold;
+	font-weight: normal;
 	text-transform: lowercase;
 }
 .section-subtitle {
